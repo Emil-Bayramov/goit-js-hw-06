@@ -1,11 +1,12 @@
-let inputEl = document.querySelector('#name-input');
-inputEl.addEventListener('input', onInputChange);
+"use strict";
 
-let outputEl = document.querySelector('#name-output');
+const nameInputRef = document.querySelector("#name-input");
+const nameOutputRef = document.querySelector("#name-output");
 
-function onInputChange(event) {
-  inputEl = event.currentTarget.value;
-  console.log(inputEl);
-
-  inputEl !== ' ' ? (outputEl.innerText = inputEl.trim()) : 'Anonymous';
-}
+nameInputRef.addEventListener("input", (event) => {
+  if (nameInputRef.value === "") {
+    nameOutputRef.textContent = "Anonymous";
+  } else {
+    nameOutputRef.textContent = event.currentTarget.value;
+  }
+});
