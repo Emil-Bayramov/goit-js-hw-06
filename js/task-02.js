@@ -11,9 +11,11 @@ const ingredients = [
 
 const listRef = document.querySelector("ul");
 
-for (const ingredient of ingredients) {
-  const item = document.createElement("li");
-  item.textContent = ingredient;
-  item.classList.add("item");
-  listRef.append(item);
-}
+const elToList = ingredients.map(ingredient => {
+  const listItemEl = document.createElement("li");
+  listItemEl.textContent = ingredient;
+  listItemEl.classList.add("item");
+  return listItemEl;
+})
+
+listRef.append(...elToList);

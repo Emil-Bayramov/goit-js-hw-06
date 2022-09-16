@@ -1,3 +1,5 @@
+"use strict";
+
 let inputEl = document.querySelector('#validation-input');
 
 let inputLength = inputEl.dataset.length;
